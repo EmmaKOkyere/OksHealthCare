@@ -7,13 +7,19 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>OksHealthCare | Home</title>
+    <title>OksHealthCare</title>
 
     <meta name="description"
-          content="OksHealthCare provides professional and compassionate healthcare services.">
+          content="OksHealthCare - Healthcare support online and offline.">
+
+    <meta name="theme-color"
+          content="#087f5b">
 
     <link rel="stylesheet"
-          href="styles/styles.css">
+          href="/css/styles.css">
+
+    <link rel="manifest"
+          href="manifest.webmanifest">
 </head>
 
 
@@ -23,45 +29,31 @@
 
     <div class="nav-container">
 
-        <a href="index.html"
-           class="logo">
+        <a class="logo"
+           href="./index.html">
 
             Oks<span>HealthCare</span>
 
         </a>
 
 
-        <button class="menu-button"
-                id="menuButton">
+        <button id="menuButton"
+                class="menu-button"
+                aria-label="Open menu">
+
             ☰
+
         </button>
 
 
         <nav id="navigation">
 
-            <a href="index.html"
-               class="active">
+            <a href="./index.html">
                 Home
             </a>
 
-            <a href="about.html">
-                About
-            </a>
-
-            <a href="services.html">
-                Services
-            </a>
-
-            <a href="team.html">
-                Our Team
-            </a>
-
-            <a href="appointment.html">
-                Appointment
-            </a>
-
-            <a href="contact.html">
-                Contact
+            <a href="./specialist.html">
+                Contact Specialist
             </a>
 
         </nav>
@@ -75,38 +67,46 @@
 
     <section class="hero">
 
-        <div class="hero-content">
+        <div class="container hero-content">
 
             <p class="small-title">
-                Welcome to OksHealthCare
+                OksHealthCare
             </p>
 
             <h1>
-                Quality Healthcare
-                You Can Trust
+                Healthcare Support
+                Wherever You Are
             </h1>
 
             <p>
-                We are committed to providing
-                professional, compassionate and
-                patient-centered healthcare services.
+                Contact OksHealthCare online or use
+                SMS and phone calls when internet
+                access is unavailable.
             </p>
+
+
+            <div id="connectionStatus"
+                 class="connection-status">
+
+                Checking connection...
+
+            </div>
 
 
             <div class="hero-buttons">
 
-                <a href="appointment.html"
+                <a href="./specialist.html"
                    class="button primary-button">
 
-                    Book an Appointment
+                    Contact Medical Specialist
 
                 </a>
 
 
-                <a href="services.html"
+                <a href="tel:+233559202450"
                    class="button secondary-button">
 
-                    Our Services
+                    Call OksHealthCare
 
                 </a>
 
@@ -123,18 +123,13 @@
 
             <div class="section-heading">
 
-                <p class="small-title">
-                    Why Choose Us
-                </p>
-
                 <h2>
-                    Your Health Is Our Priority
+                    How OksHealthCare Works
                 </h2>
 
                 <p>
-                    OksHealthCare focuses on quality,
-                    respect, safety and excellent
-                    patient experience.
+                    You can request healthcare support
+                    even when mobile data or Wi-Fi is unavailable.
                 </p>
 
             </div>
@@ -144,17 +139,17 @@
 
                 <article class="card">
 
-                    <div class="card-icon">
-                        ❤
+                    <div class="icon">
+                        🌐
                     </div>
 
                     <h3>
-                        Compassionate Care
+                        Online
                     </h3>
 
                     <p>
-                        We treat every patient with
-                        respect, care and understanding.
+                        Use OksHealthCare normally when
+                        you have an internet connection.
                     </p>
 
                 </article>
@@ -162,18 +157,18 @@
 
                 <article class="card">
 
-                    <div class="card-icon">
-                        ✚
+                    <div class="icon">
+                        ✉️
                     </div>
 
                     <h3>
-                        Professional Service
+                        Offline SMS
                     </h3>
 
                     <p>
-                        Our goal is to provide reliable
-                        and professional healthcare
-                        services.
+                        Without internet, you can send
+                        an SMS callback request using
+                        your mobile network.
                     </p>
 
                 </article>
@@ -181,18 +176,17 @@
 
                 <article class="card">
 
-                    <div class="card-icon">
-                        ✓
+                    <div class="icon">
+                        📞
                     </div>
 
                     <h3>
-                        Patient Safety
+                        Phone Call
                     </h3>
 
                     <p>
-                        We place safety, cleanliness
-                        and patient wellbeing at the
-                        center of our work.
+                        You can also call the
+                        OksHealthCare medical support line.
                     </p>
 
                 </article>
@@ -204,25 +198,21 @@
     </section>
 
 
-    <section class="cta">
+    <section class="emergency-section">
 
         <div class="container">
 
             <h2>
-                Need Healthcare Assistance?
+                Medical Emergency?
             </h2>
 
             <p>
-                Schedule an appointment with
-                OksHealthCare today.
+                OksHealthCare's callback system should not
+                replace emergency medical services.
+                If someone's life may be in immediate danger,
+                contact the appropriate emergency service
+                or seek emergency medical care.
             </p>
-
-            <a href="appointment.html"
-               class="button white-button">
-
-                Book Appointment
-
-            </a>
 
         </div>
 
@@ -235,34 +225,20 @@
 
     <div class="container footer-content">
 
-        <div>
+        <strong>
+            OksHealthCare
+        </strong>
 
-            <h3>
-                OksHealthCare
-            </h3>
-
-            <p>
-                Quality healthcare you can trust.
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <p>
-                © 2026 OksHealthCare
-            </p>
-
-        </div>
+        <p>
+            © 2026 OksHealthCare
+        </p>
 
     </div>
 
 </footer>
 
 
-<script src="script.js"></script>
+<script src="./app.js"></script>
 
 </body>
-
 </html>

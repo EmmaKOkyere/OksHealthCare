@@ -1,0 +1,22 @@
+{
+    "name": "OksHealthCare",
+    "short_name": "OksHealth",
+    "description": "Healthcare support online and offline.",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#087f5b",
+    "icons": [
+        {
+            "src": "./images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

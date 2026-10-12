@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Contact Specialist | OksHealthCare
+    </title>
+
+    <meta name="theme-color"
+          content="#087f5b">
+
+    <link rel="stylesheet"
+          href="/css/styles.css">
+
+    <link rel="manifest"
+          href="./manifest.webmanifest">
+
+</head>
+
+
+<body>
+
+<header class="header">
+
+    <div class="nav-container">
+
+        <a class="logo"
+           href="./index.html">
+
+            Oks<span>HealthCare</span>
+
+        </a>
+
+
+        <button id="menuButton"
+                class="menu-button">
+
+            ☰
+
+        </button>
+
+
+        <nav id="navigation">
+
+            <a href="./index.html">
+                Home
+            </a>
+
+            <a href="./specialist.html">
+                Contact Specialist
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="page-banner">
+
+    <div class="container">
+
+        <h1>
+            Contact a Medical Specialist
+        </h1>
+
+        <p>
+            Request a callback using SMS
+            when internet access is unavailable.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+<div class="container form-container">
+
+
+    <div id="connectionStatus"
+         class="connection-status">
+
+        Checking connection...
+
+    </div>
+
+
+    <div class="specialist-card">
+
+        <h2>
+            Request a Callback
+        </h2>
+
+        <p class="intro-text">
+            Enter only the information needed for
+            OksHealthCare to contact you.
+        </p>
+
+
+        <form id="specialistForm">
+
+
+            <div class="form-group">
+
+                <label for="patientName">
+                    Full Name
+                </label>
+
+                <input type="text"
+                       id="patientName"
+                       autocomplete="name"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="patientPhone">
+                    Your Phone Number
+                </label>
+
+                <input type="tel"
+                       id="patientPhone"
+                       autocomplete="tel"
+                       required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="requestType">
+                    Who Would You Like to Speak With?
+                </label>
+
+                <select id="requestType"
+                        required>
+
+                    <option value="">
+                        Select one
+                    </option>
+
+                    <option value="Doctor">
+                        Doctor
+                    </option>
+
+                    <option value="Nurse">
+                        Nurse
+                    </option>
+
+                    <option value="General Consultation">
+                        General Consultation
+                    </option>
+
+                    <option value="Follow-Up">
+                        Follow-Up
+                    </option>
+
+                    <option value="Appointment">
+                        Appointment
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="priority">
+                    Priority
+                </label>
+
+                <select id="priority">
+
+                    <option value="Normal">
+                        Normal
+                    </option>
+
+                    <option value="Urgent">
+                        Urgent
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button type="submit"
+                    class="button primary-button full-button">
+
+                Send Callback Request by SMS
+
+            </button>
+
+        </form>
+
+
+        <p class="safe-message">
+
+            Do not enter symptoms, diagnoses,
+            medical records or other confidential
+            medical information here.
+
+        </p>
+
+    </div>
+
+
+    <div class="alternative-contact">
+
+        <h2>
+            Other Contact Options
+        </h2>
+
+
+        <a href="tel:+233XXXXXXXXX"
+           class="contact-button call">
+
+            <span>
+                📞
+            </span>
+
+            <div>
+
+                <strong>
+                    Call Medical Support
+                </strong>
+
+                <small>
+                    Works without internet if cellular
+                    calling service is available.
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <a href="sms:+233559202450"
+           class="contact-button sms">
+
+            <span>
+                ✉️
+            </span>
+
+            <div>
+
+                <strong>
+                    Send SMS
+                </strong>
+
+                <small>
+                    Works without mobile data if SMS
+                    service is available.
+                </small>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <div class="privacy-box">
+
+        <strong>
+            Privacy Notice
+        </strong>
+
+        <p>
+            SMS is being used only to request contact
+            from OksHealthCare. Avoid sending medical
+            histories, identification numbers,
+            passwords or detailed health information
+            through ordinary SMS.
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-content">
+
+        <strong>
+            OksHealthCare
+        </strong>
+
+        <p>
+            © 2026 OksHealthCare
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="./app.js"></script>
+
+</body>
+
+</html>
