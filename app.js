@@ -1,35 +1,58 @@
-// =========================================
-// OksHealthCare Application
-// =========================================
+// ====================================
+// OksHealthCare Contact System
+// ====================================
 
 
-// =========================================
-// CHANGE THIS NUMBER
-// =========================================
+// CHANGE THIS NUMBER ONLY
 
 const OKS_HEALTHCARE_NUMBER =
-    "+233559202450";
+    "+233XXXXXXXXX";
 
 
 
-// =========================================
-// MOBILE MENU
-// =========================================
+// ====================================
+// DIRECT CALL BUTTON
+// ====================================
 
-const menuButton =
-    document.getElementById("menuButton");
-
-const navigation =
-    document.getElementById("navigation");
+const callButton =
+    document.getElementById("callButton");
 
 
-if (menuButton && navigation) {
+if (callButton) {
 
-    menuButton.addEventListener(
+    callButton.href =
+        "tel:" + OKS_HEALTHCARE_NUMBER;
+
+}
+
+
+
+// ====================================
+// DIRECT SMS BUTTON
+// ====================================
+
+const directSmsButton =
+    document.getElementById(
+        "directSmsButton"
+    );
+
+
+if (directSmsButton) {
+
+    const directMessage =
+        "Hello OksHealthCare. I would like to speak with a medical specialist.";
+
+
+    directSmsButton.addEventListener(
         "click",
-        function () {
+        function (event) {
 
-            navigation.classList.toggle("show");
+            event.preventDefault();
+
+            openSMS(
+                OKS_HEALTHCARE_NUMBER,
+                directMessage
+            );
 
         }
     );
@@ -38,9 +61,9 @@ if (menuButton && navigation) {
 
 
 
-// =========================================
+// ====================================
 // CONNECTION STATUS
-// =========================================
+// ====================================
 
 const connectionStatus =
     document.getElementById(
@@ -57,8 +80,8 @@ function updateConnectionStatus() {
 
     if (navigator.onLine) {
 
-        connectionStatus.innerHTML =
-            "● Online — Internet connection available.";
+        connectionStatus.textContent =
+            "● Internet available";
 
         connectionStatus.className =
             "connection-status online";
@@ -67,8 +90,8 @@ function updateConnectionStatus() {
 
     else {
 
-        connectionStatus.innerHTML =
-            "● Offline — You can still use SMS or phone calls if cellular service is available.";
+        connectionStatus.textContent =
+            "● No internet. SMS and calls may still work.";
 
         connectionStatus.className =
             "connection-status offline";
@@ -94,9 +117,9 @@ window.addEventListener(
 
 
 
-// =========================================
-// SPECIALIST CALLBACK REQUEST
-// =========================================
+// ====================================
+// CALLBACK FORM
+// ====================================
 
 const specialistForm =
     document.getElementById(
@@ -113,40 +136,34 @@ if (specialistForm) {
             event.preventDefault();
 
 
-            const patientName =
+            const name =
                 document
                 .getElementById("patientName")
                 .value
                 .trim();
 
 
-            const patientPhone =
+            const phone =
                 document
                 .getElementById("patientPhone")
                 .value
                 .trim();
 
 
-            const requestType =
+            const specialist =
                 document
-                .getElementById("requestType")
-                .value;
-
-
-            const priority =
-                document
-                .getElementById("priority")
+                .getElementById("specialistType")
                 .value;
 
 
             if (
-                patientName === "" ||
-                patientPhone === "" ||
-                requestType === ""
+                name === "" ||
+                phone === "" ||
+                specialist === ""
             ) {
 
                 alert(
-                    "Please complete the required fields."
+                    "Please complete all fields."
                 );
 
                 return;
@@ -157,19 +174,15 @@ if (specialistForm) {
                 "OksHealthCare Callback Request\n\n" +
 
                 "Name: " +
-                patientName +
+                name +
                 "\n" +
 
                 "Callback Number: " +
-                patientPhone +
+                phone +
                 "\n" +
 
-                "Request: " +
-                requestType +
-                "\n" +
-
-                "Priority: " +
-                priority +
+                "Requested Specialist: " +
+                specialist +
                 "\n\n" +
 
                 "Please contact me when available.";
@@ -187,9 +200,9 @@ if (specialistForm) {
 
 
 
-// =========================================
-// OPEN SMS APP
-// =========================================
+// ====================================
+// OPEN PHONE SMS APP
+// ====================================
 
 function openSMS(number, message) {
 
@@ -198,14 +211,16 @@ function openSMS(number, message) {
 
 
     const userAgent =
-        navigator.userAgent ||
-        navigator.vendor ||
-        window.opera;
+        navigator.userAgent || "";
 
 
     // iPhone / iPad
 
-    if (/iPad|iPhone|iPod/.test(userAgent)) {
+    if (
+        /iPhone|iPad|iPod/i.test(
+            userAgent
+        )
+    ) {
 
         window.location.href =
             "sms:" +
@@ -215,7 +230,7 @@ function openSMS(number, message) {
 
     }
 
-    // Android and other devices
+    // Android / other devices
 
     else {
 
@@ -231,9 +246,9 @@ function openSMS(number, message) {
 
 
 
-// =========================================
-// SERVICE WORKER
-// =========================================
+// ====================================
+// OFFLINE SERVICE WORKER
+// ====================================
 
 if ("serviceWorker" in navigator) {
 
@@ -245,11 +260,10 @@ if ("serviceWorker" in navigator) {
                 .register("./sw.js")
 
                 .then(
-                    function (registration) {
+                    function () {
 
                         console.log(
-                            "OksHealthCare Service Worker registered:",
-                            registration.scope
+                            "Offline service ready."
                         );
 
                     }
@@ -259,7 +273,7 @@ if ("serviceWorker" in navigator) {
                     function (error) {
 
                         console.error(
-                            "Service Worker registration failed:",
+                            "Service worker error:",
                             error
                         );
 

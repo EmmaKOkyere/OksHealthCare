@@ -1,34 +1,18 @@
 const CACHE_NAME =
-    "okshealthcare-v1";
+    "okshealthcare-contact-v1";
 
 
-const OFFLINE_FILES = [
-
+const FILES_TO_CACHE = [
     "./",
-
     "./index.html",
-
-    "./specialist.html",
-
-    "./offline.html",
-
-    "./css/style.css",
-
     "./app.js",
-
-    "./manifest.webmanifest",
-
-    "./images/icon-192.png",
-
-    "./images/icon-512.png"
-
+    "./css/styles.css",
+    "./manifest.webmanifest"
 ];
 
 
 
-// =========================================
 // INSTALL
-// =========================================
 
 self.addEventListener(
     "install",
@@ -43,7 +27,7 @@ self.addEventListener(
                     function (cache) {
 
                         return cache.addAll(
-                            OFFLINE_FILES
+                            FILES_TO_CACHE
                         );
 
                     }
@@ -59,9 +43,7 @@ self.addEventListener(
 
 
 
-// =========================================
 // ACTIVATE
-// =========================================
 
 self.addEventListener(
     "activate",
@@ -69,24 +51,22 @@ self.addEventListener(
 
         event.waitUntil(
 
-            caches
-                .keys()
-
+            caches.keys()
                 .then(
-                    function (cacheNames) {
+                    function (names) {
 
                         return Promise.all(
 
-                            cacheNames.map(
-                                function (cacheName) {
+                            names.map(
+                                function (name) {
 
                                     if (
-                                        cacheName !==
+                                        name !==
                                         CACHE_NAME
                                     ) {
 
                                         return caches.delete(
-                                            cacheName
+                                            name
                                         );
 
                                     }
@@ -109,14 +89,11 @@ self.addEventListener(
 
 
 
-// =========================================
 // FETCH
-// =========================================
 
 self.addEventListener(
     "fetch",
     function (event) {
-
 
         if (
             event.request.method !== "GET"
@@ -134,15 +111,10 @@ self.addEventListener(
             )
 
             .then(
-                function (
-                    cachedResponse
-                ) {
+                function (cached) {
 
-
-                    if (cachedResponse) {
-
-                        return cachedResponse;
-
+                    if (cached) {
+                        return cached;
                     }
 
 
@@ -150,39 +122,8 @@ self.addEventListener(
                         event.request
                     )
 
-                    .then(
-                        function (
-                            networkResponse
-                        ) {
-
-
-                            const responseClone =
-                                networkResponse.clone();
-
-
-                            caches
-                                .open(CACHE_NAME)
-
-                                .then(
-                                    function (cache) {
-
-                                        cache.put(
-                                            event.request,
-                                            responseClone
-                                        );
-
-                                    }
-                                );
-
-
-                            return networkResponse;
-
-                        }
-                    )
-
                     .catch(
                         function () {
-
 
                             if (
                                 event.request.mode ===
@@ -190,7 +131,7 @@ self.addEventListener(
                             ) {
 
                                 return caches.match(
-                                    "./offline.html"
+                                    "./index.html"
                                 );
 
                             }

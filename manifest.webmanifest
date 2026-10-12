@@ -1,7 +1,7 @@
 {
     "name": "OksHealthCare",
     "short_name": "OksHealth",
-    "description": "Healthcare support online and offline.",
+    "description": "Contact OksHealthCare medical support.",
     "start_url": "./index.html",
     "scope": "./",
     "display": "standalone",

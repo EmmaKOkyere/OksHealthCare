@@ -1,16 +1,7 @@
-/* ==================================
-   GENERAL
-================================== */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-
-html {
-    scroll-behavior: smooth;
 }
 
 
@@ -20,71 +11,59 @@ body {
         Helvetica,
         sans-serif;
 
-    background: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #ecfdf5,
+            #eff6ff
+        );
 
     color: #1f2937;
 
-    line-height: 1.6;
+    min-height: 100vh;
 }
 
 
-a {
-    text-decoration: none;
-}
-
-
-.container {
-    width: 90%;
-
-    max-width: 1100px;
-
-    margin: auto;
-}
-
-
-
-/* ==================================
-   HEADER
-================================== */
-
-.header {
-    background: white;
-
-    border-bottom:
-        1px solid #e5e7eb;
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 1000;
-}
-
-
-.nav-container {
-    width: 90%;
-
-    max-width: 1100px;
-
-    margin: auto;
-
-    min-height: 72px;
+.main {
+    min-height: 100vh;
 
     display: flex;
 
+    justify-content: center;
+
     align-items: center;
 
-    justify-content:
-        space-between;
+    padding: 30px 15px;
+}
+
+
+.contact-card {
+    width: 100%;
+
+    max-width: 550px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.08);
 }
 
 
 .logo {
     color: #087f5b;
 
-    font-size: 25px;
+    font-size: 27px;
 
     font-weight: bold;
+
+    text-align: center;
+
+    margin-bottom: 25px;
 }
 
 
@@ -93,129 +72,107 @@ a {
 }
 
 
-nav {
-    display: flex;
-
-    gap: 25px;
-
-    align-items: center;
-}
-
-
-nav a {
-    color: #374151;
-
-    font-weight: bold;
-}
-
-
-nav a:hover {
-    color: #087f5b;
-}
-
-
-.menu-button {
-    display: none;
-
-    border: none;
-
-    background: transparent;
-
-    color: #087f5b;
-
-    font-size: 28px;
-
-    cursor: pointer;
-}
-
-
-
-/* ==================================
-   HERO
-================================== */
-
-.hero {
-    min-height: 76vh;
-
-    display: flex;
-
-    align-items: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ecfdf5,
-            #eff6ff
-        );
-
-    padding:
-        80px 0;
-}
-
-
-.hero-content {
+h1 {
     text-align: center;
 
-    max-width: 800px;
-}
-
-
-.small-title {
-    color: #087f5b;
-
-    text-transform: uppercase;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-    margin-bottom: 10px;
-}
-
-
-.hero h1 {
     color: #0f172a;
 
-    font-size: 52px;
+    font-size: 32px;
 
-    line-height: 1.12;
-
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 
-.hero p {
-    color: #64748b;
+.description {
+    text-align: center;
 
-    font-size: 19px;
+    color: #64748b;
 
     margin-bottom: 25px;
 }
 
 
-.hero-buttons {
-    display: flex;
+/* STATUS */
 
-    justify-content: center;
+.connection-status {
+    padding: 12px;
 
-    gap: 15px;
+    border-radius: 8px;
 
-    flex-wrap: wrap;
+    margin-bottom: 25px;
 
-    margin-top: 25px;
+    font-weight: bold;
+
+    text-align: center;
 }
 
 
+.connection-status.online {
+    background: #dcfce7;
 
-/* ==================================
-   BUTTONS
-================================== */
+    color: #166534;
+}
+
+
+.connection-status.offline {
+    background: #ffedd5;
+
+    color: #9a3412;
+}
+
+
+/* FORM */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    padding: 13px;
+
+    font-size: 16px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    background: white;
+}
+
+
+input:focus,
+select:focus {
+    outline:
+        2px solid #a7f3d0;
+
+    border-color: #087f5b;
+}
+
+
+/* BUTTONS */
 
 .button {
-    display: inline-block;
+    display: block;
 
-    padding:
-        14px 24px;
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
 
     border-radius: 8px;
 
@@ -223,22 +180,24 @@ nav a:hover {
 
     font-weight: bold;
 
-    border: none;
+    text-align: center;
+
+    text-decoration: none;
 
     cursor: pointer;
 
-    text-align: center;
+    margin-top: 12px;
 }
 
 
-.primary-button {
+.sms-button {
     background: #087f5b;
 
     color: white;
 }
 
 
-.primary-button:hover {
+.sms-button:hover {
     background: #066649;
 }
 
@@ -255,329 +214,41 @@ nav a:hover {
 }
 
 
-.full-button {
-    width: 100%;
-}
-
-
-
-/* ==================================
-   CONNECTION STATUS
-================================== */
-
-.connection-status {
-    border-radius: 8px;
-
-    padding: 12px 16px;
-
-    margin:
-        20px auto;
-
-    max-width: 650px;
-
-    font-weight: bold;
-}
-
-
-.connection-status.online {
-    background: #dcfce7;
-
-    border:
-        1px solid #86efac;
-
-    color: #166534;
-}
-
-
-.connection-status.offline {
-    background: #ffedd5;
-
-    border:
-        1px solid #fdba74;
-
-    color: #9a3412;
-}
-
-
-
-/* ==================================
-   SECTIONS
-================================== */
-
-.section {
-    padding:
-        75px 0;
-}
-
-
-.section-heading {
-    text-align: center;
-
-    max-width: 700px;
-
-    margin:
-        0 auto 40px;
-}
-
-
-.section-heading h2 {
-    font-size: 36px;
-
-    color: #0f172a;
-
-    margin-bottom: 12px;
-}
-
-
-.section-heading p {
-    color: #64748b;
-}
-
-
-
-/* ==================================
-   CARDS
-================================== */
-
-.card-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-
-.card {
-    border:
-        1px solid #e5e7eb;
-
-    border-radius: 14px;
-
-    padding: 30px;
-
-    background: white;
-
-    box-shadow:
-        0 10px 25px
-        rgba(0,0,0,0.05);
-}
-
-
-.card h3 {
-    color: #0f172a;
-
-    margin-bottom: 10px;
-}
-
-
-.card p {
-    color: #64748b;
-}
-
-
-.icon {
-    font-size: 35px;
-
-    margin-bottom: 15px;
-}
-
-
-
-/* ==================================
-   PAGE BANNER
-================================== */
-
-.page-banner {
-    background:
-        linear-gradient(
-            135deg,
-            #087f5b,
-            #2563eb
-        );
+.call-button {
+    background: #0f172a;
 
     color: white;
+}
 
-    padding:
-        70px 20px;
+
+.call-button:hover {
+    background: #1e293b;
+}
+
+
+.divider {
+    text-align: center;
+
+    color: #94a3b8;
+
+    margin: 22px 0 10px;
+}
+
+
+/* INFORMATION */
+
+.network-note {
+    margin-top: 25px;
 
     text-align: center;
-}
 
-
-.page-banner h1 {
-    font-size: 42px;
-
-    margin-bottom: 10px;
-}
-
-
-
-/* ==================================
-   FORM
-================================== */
-
-.form-container {
-    max-width: 720px;
-}
-
-
-.specialist-card {
-    border:
-        1px solid #e5e7eb;
-
-    border-radius: 15px;
-
-    padding: 35px;
-
-    box-shadow:
-        0 10px 30px
-        rgba(0,0,0,0.06);
-}
-
-
-.specialist-card h2 {
-    margin-bottom: 8px;
-
-    color: #0f172a;
-}
-
-
-.intro-text {
     color: #64748b;
 
-    margin-bottom: 25px;
+    font-size: 14px;
 }
 
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-
-.form-group label {
-    display: block;
-
-    font-weight: bold;
-
-    margin-bottom: 7px;
-}
-
-
-.form-group input,
-.form-group select {
-
-    width: 100%;
-
-    padding: 13px;
-
-    border:
-        1px solid #cbd5e1;
-
-    border-radius: 7px;
-
-    font-size: 16px;
-
-    background: white;
-}
-
-
-.form-group input:focus,
-.form-group select:focus {
-
-    outline:
-        2px solid #a7f3d0;
-
-    border-color: #087f5b;
-}
-
-
-.safe-message {
-    margin-top: 20px;
-
-    background: #fefce8;
-
-    border:
-        1px solid #fde68a;
-
-    padding: 15px;
-
-    border-radius: 8px;
-
-    color: #854d0e;
-}
-
-
-
-/* ==================================
-   ALTERNATIVE CONTACT
-================================== */
-
-.alternative-contact {
-    margin-top: 35px;
-}
-
-
-.alternative-contact h2 {
-    margin-bottom: 20px;
-}
-
-
-.contact-button {
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-    border:
-        1px solid #e5e7eb;
-
-    padding: 20px;
-
-    margin-bottom: 15px;
-
-    border-radius: 12px;
-
-    color: #1f2937;
-
-    background: #f8fafc;
-}
-
-
-.contact-button:hover {
-    border-color: #087f5b;
-
-    background: #ecfdf5;
-}
-
-
-.contact-button span {
-    font-size: 30px;
-}
-
-
-.contact-button div {
-    display: flex;
-
-    flex-direction: column;
-}
-
-
-.contact-button small {
-    margin-top: 4px;
-
-    color: #64748b;
-}
-
-
-
-/* ==================================
-   PRIVACY
-================================== */
-
-.privacy-box {
+.privacy-note {
     margin-top: 25px;
 
     background: #eff6ff;
@@ -585,250 +256,70 @@ nav a:hover {
     border:
         1px solid #bfdbfe;
 
-    border-radius: 10px;
+    padding: 15px;
 
-    padding: 20px;
+    border-radius: 8px;
 }
 
 
-.privacy-box strong {
-    color: #1e40af;
+.privacy-note strong {
+    color: #1d4ed8;
 }
 
 
-.privacy-box p {
+.privacy-note p {
     margin-top: 5px;
 
     color: #475569;
+
+    font-size: 14px;
 }
 
 
+.emergency-note {
+    margin-top: 15px;
 
-/* ==================================
-   EMERGENCY
-================================== */
-
-.emergency-section {
     background: #fef2f2;
 
-    border-top:
+    border:
         1px solid #fecaca;
 
-    border-bottom:
-        1px solid #fecaca;
+    padding: 15px;
 
-    padding:
-        45px 0;
-
-    text-align: center;
+    border-radius: 8px;
 }
 
 
-.emergency-section h2 {
+.emergency-note strong {
     color: #991b1b;
-
-    margin-bottom: 10px;
 }
 
 
-.emergency-section p {
+.emergency-note p {
+    margin-top: 5px;
+
     color: #7f1d1d;
 
-    max-width: 750px;
-
-    margin: auto;
+    font-size: 14px;
 }
 
 
+/* MOBILE */
 
-/* ==================================
-   OFFLINE PAGE
-================================== */
+@media (max-width: 600px) {
 
-.offline-page {
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ecfdf5,
-            #eff6ff
-        );
-}
-
-
-.offline-card {
-    max-width: 550px;
-
-    background: white;
-
-    border-radius: 16px;
-
-    padding: 40px;
-
-    text-align: center;
-
-    box-shadow:
-        0 10px 35px
-        rgba(0,0,0,0.08);
-}
-
-
-.offline-card h1 {
-    margin-bottom: 15px;
-}
-
-
-.offline-card p {
-    color: #64748b;
-
-    margin-bottom: 25px;
-}
-
-
-.offline-card .button {
-    margin: 5px;
-}
-
-
-.large-icon {
-    font-size: 55px;
-
-    margin-bottom: 15px;
-}
-
-
-
-/* ==================================
-   FOOTER
-================================== */
-
-footer {
-    background: #0f172a;
-
-    color: white;
-
-    padding: 35px 0;
-}
-
-
-.footer-content {
-    display: flex;
-
-    justify-content:
-        space-between;
-
-    align-items: center;
-
-    gap: 20px;
-}
-
-
-.footer-content p {
-    color: #cbd5e1;
-}
-
-
-
-/* ==================================
-   TABLET
-================================== */
-
-@media (max-width: 900px) {
-
-    .card-grid {
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-}
-
-
-
-/* ==================================
-   MOBILE
-================================== */
-
-@media (max-width: 700px) {
-
-    .menu-button {
-        display: block;
+    .main {
+        padding: 15px;
     }
 
 
-    nav {
-        display: none;
-
-        position: absolute;
-
-        left: 0;
-
-        top: 72px;
-
-        width: 100%;
-
-        flex-direction: column;
-
-        background: white;
-
-        padding: 20px;
-
-        border-bottom:
-            1px solid #e5e7eb;
+    .contact-card {
+        padding: 25px 20px;
     }
 
 
-    nav.show {
-        display: flex;
-    }
-
-
-    .hero {
-        min-height: 70vh;
-
-        padding:
-            55px 0;
-    }
-
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-
-    .hero p {
-        font-size: 17px;
-    }
-
-
-    .card-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .page-banner h1 {
-        font-size: 32px;
-    }
-
-
-    .specialist-card {
-        padding: 22px;
-    }
-
-
-    .footer-content {
-        flex-direction: column;
-
-        text-align: center;
+    h1 {
+        font-size: 27px;
     }
 
 }
